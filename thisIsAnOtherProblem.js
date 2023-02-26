@@ -6,6 +6,6 @@ function NamedOne(first, last) {
 }
 
 var n = new NamedOne("Naomi","Wang");
-console.log(n.firstName);
+console.log(n.firstName, n.fullName);
 n.firstName = "Jane";
-console.log(n.firstName);
+console.log(n.firstName, n.fullName);
