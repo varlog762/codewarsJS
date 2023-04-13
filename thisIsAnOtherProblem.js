@@ -1,11 +1,16 @@
-function NamedOne(first, last) {
-    
-    this.firstName = first;
-    this.lastName = last;
-    this.fullName = this.firstName + ' ' + this.lastName;
-}
+class NamedOne {
+    constructor(name, surname) {
+        this.firstName = name;
+        this.lastName = surname;
+    }
 
-var n = new NamedOne("Naomi","Wang");
-console.log(n.firstName, n.fullName);
-n.firstName = "Jane";
-console.log(n.firstName, n.fullName);
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+
+    set fullName(value) {
+        if (value.includes(' ')) {
+            [this.firstName, this.lastName] = value.split(' ');
+        }
+    }
+}
